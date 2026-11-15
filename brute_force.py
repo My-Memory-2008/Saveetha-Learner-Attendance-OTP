@@ -1,7 +1,7 @@
 import requests
 import time
 
-def brute_force_attack(url):
+def brute_force_attack(target_url):
     
     for otp in range(1000000):
         otp_str = f"{otp:06d}"
