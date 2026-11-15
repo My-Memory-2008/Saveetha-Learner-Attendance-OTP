@@ -37,7 +37,7 @@ if __name__ == "__main__":
             target_url = f.read().strip()
     except FileNotFoundError:
         print("ERROR: link.txt not found in repository root")
-        return False
+        
     
     print(f"Starting brute force attack on: {target_url}")
     print("Searching for valid OTP between 000000 and 999999...")
