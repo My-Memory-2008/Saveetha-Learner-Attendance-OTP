@@ -1,3 +1,40 @@
+# name: Brute Force Attack
+
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       start:
+#         description: 'Start the brute force attack'
+#         required: true
+#         type: boolean
+#         default: 'false'
+
+# jobs:
+#   brute-force:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+        
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.10'
+          
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install requests
+          
+#       - name: Run brute force attack
+#         run: python brute_force.py
+
+
+
+
+
+
+
 name: Brute Force Attack
 
 on:
@@ -24,7 +61,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          pip install selenium requests
           
+      - name: Install ChromeDriver
+        uses: nanasess/setup-chromedriver@master
+        
       - name: Run brute force attack
         run: python brute_force.py
